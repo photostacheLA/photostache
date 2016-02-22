@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :admins, only: [:index, :edit, :show]
   devise_for :admins
 
   devise_scope :admin do
@@ -11,4 +10,7 @@ Rails.application.routes.draw do
       root 'devise/sessions#new', as: :unauthenticated_root
     end
   end
+
+  resources :admins, only: [:index, :edit, :show]
+  resources :customers
 end
