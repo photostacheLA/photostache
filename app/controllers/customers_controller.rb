@@ -19,13 +19,14 @@ class CustomersController < ApplicationController
   end
 
   def create
-    customer = Customer.find_by_email(customer_params[:email])
-    if customer.present?
-      flash[:alert] = "Customer with this email already exists! Check again you fools! Roy Kim!"
+    @customer = Customer.new(customer_params)
+    if @customer.save
+      flash[:notice] = "You've created a new customer!"
+      redirect_to customers_path
     else
-      Customer.create(customer_params)
+      flash[:alert] = "Uh oh, something went wrong :("
+      render "new"
     end
-    redirect_to customers_path
   end
 
   def destroy

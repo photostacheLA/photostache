@@ -1,0 +1,12 @@
+.customers--table {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.customers--table th,
+.customers--table td {
+  padding: 10px;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+}

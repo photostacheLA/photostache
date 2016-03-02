@@ -1,6 +1,8 @@
 $turquoise: #1abd9d;
+$clouds: #ecf0f1;
 
 $primaryColor: $turquoise;
+$secondaryColor: $clouds;
 
 .margin-top-100 {
   margin-top: 100px;
