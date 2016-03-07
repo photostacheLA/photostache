@@ -1,4 +1,4 @@
-<h1>Add New Client</h1>
+<h1>Add New Customer</h1>
 
 <%= simple_form_for @customer do |c| %>
   <%= c.input :first_name %>
@@ -10,5 +10,6 @@
   <%= c.input :event_date %>
   <%= c.input :event_location %>
   <%= c.input :note %>
+  <%= c.input :web_page_viewable, as: :boolean %>
   <%= c.button :submit, "Create Client" %>
 <% end %>

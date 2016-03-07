@@ -3,15 +3,17 @@
 
 <table class="customers--table">
   <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
+    <th>Full Name</th>
     <th>Gallery Web Address</th>
+    <th>Allow web address to be viewed?</th>
   </tr>
   <% @customers.each do |customer| %>
     <tr>
-      <td><%= customer.first_name %></td>
-      <td><%= customer.last_name %></td>
+      <td>
+        <%= link_to customer.full_name, customer_path(customer) %>
+      </td>
       <td><%= customer.gallery_web_address %></td>
+      <td><%= customer.web_page_viewable? %></td>
     </tr>
   <% end %>
 </table>

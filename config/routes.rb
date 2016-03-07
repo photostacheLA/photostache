@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_scope :admin do
     authenticated :admin do
-      root 'home#index', as: :authenticated_root
+      root 'customers#index', as: :authenticated_root
     end
 
     unauthenticated do

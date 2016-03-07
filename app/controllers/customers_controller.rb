@@ -1,11 +1,12 @@
 class CustomersController < ApplicationController
-  # before_filter :authenticate_admin!
+  before_filter :authenticate_admin!
 
   def index
     @customers = Customer.all
   end
 
   def show
+    @customer = Customer.find(params[:id])
   end
 
   def new
@@ -13,9 +14,18 @@ class CustomersController < ApplicationController
   end
 
   def update
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+      flash[:notice] = "You've successfully edited customer's profile!"
+      redirect_to customer_path(@customer)
+    else
+      flash[:alert] = "Uh oh, something went wrong :("
+      redirect_to edit_customer_path(@customer)
+    end
   end
 
   def edit
+    @customer = Customer.find(params[:id])
   end
 
   def create

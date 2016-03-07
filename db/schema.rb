@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209062223) do
+ActiveRecord::Schema.define(version: 20160302072936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,8 +44,9 @@ ActiveRecord::Schema.define(version: 20160209062223) do
     t.string   "gallery_web_address"
     t.string   "event_location"
     t.string   "note"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "web_page_viewable",   default: false
   end
 
   add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree

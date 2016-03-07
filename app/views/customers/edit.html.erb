@@ -1,0 +1,18 @@
+<h1>Edit Customer Information</h1>
+
+<%= simple_form_for :customer, url: customer_path(@customer), method: :patch do |c| %>
+  <%= c.input :first_name, error: "Username is required" %>
+  <%= c.input :last_name %>
+  <%= c.input :email %>
+  <%= c.input :gallery_web_address %>
+  <%= c.input :phone %>
+  <%= c.input :address %>
+  <%= c.input :event_date %>
+  <%= c.input :event_location %>
+  <%= c.input :note %>
+  <%= c.input :web_page_viewable, as: :boolean %>
+  <%= c.button :submit, "Save Changes To Customer Profile" %>
+<% end %>
+
+
+<%= link_to 'Go back to customer page', customer_path(@customer) %>

@@ -1,1 +1,13 @@
-<h1>Client Information</h1>
+<h1>Customer Information</h1>
+
+<table class="customers--table">
+  <% @customer.customer_attributes.each do |k,v| %>
+    <tr>
+      <td><%= k.gsub(/_/, ' ').titleize %></td>
+      <td><%= v %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to "Edit Customer", edit_customer_path %>
