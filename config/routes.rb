@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   resources :admins, only: [:index, :edit, :show]
   resources :customers
+
+  get '/gallery_addresses', to: 'application#gallery_web_address'
 end

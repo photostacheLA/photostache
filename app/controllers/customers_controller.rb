@@ -42,6 +42,8 @@ class CustomersController < ApplicationController
   def destroy
   end
 
+  private
+
   def customer_params
     params.require(:customer).permit!
   end
