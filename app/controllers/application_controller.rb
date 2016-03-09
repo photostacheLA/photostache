@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def gallery_web_address
     @customers = Customer.all
                   .where(web_page_viewable: true)
-                  .map { |c| [c.note, x.gallery_web_address] }
+                  .map { |c| [c.note, c.gallery_web_address] }
     render json: @customers, callback: params['callback']
   end
 end
