@@ -1,12 +1,17 @@
 .customers--table {
   width: 100%;
-  border: 1px solid black;
+  border-top: 1px solid #ECF0F1;
 }
 
 .customers--table th,
 .customers--table td {
   padding: 10px;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #ECF0F1;
   text-align: center;
+}
+
+
+.add-customer-btn {
+  vertical-align: center;
+  margin-top: 45px;
 }

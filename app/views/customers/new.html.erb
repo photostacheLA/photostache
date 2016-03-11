@@ -10,6 +10,13 @@
   <%= c.input :event_date %>
   <%= c.input :event_location %>
   <%= c.input :note %>
-  <%= c.input :web_page_viewable, as: :boolean %>
-  <%= c.button :submit, "Create Client" %>
+  <%= c.input_field :web_page_viewable,  as: :boolean %>
+  <%= c.label :web_page_viewable %>
+  <%= c.button :submit, "Create Client", class: "btn btn-primary width-100" %>
 <% end %>
+
+<script type="text/javascript">
+  var target = $("[name='customer[web_page_viewable]']")[0];
+  target.remove();
+  $("[name='customer[web_page_viewable]']").bootstrapSwitch();
+</script>

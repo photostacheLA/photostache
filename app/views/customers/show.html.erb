@@ -1,4 +1,6 @@
-<h1>Customer Information</h1>
+<h1 class="float-left">Customer Information</h1>
+
+<%= link_to "Edit Customer", edit_customer_path, class: "float-right btn btn-lg btn-primary add-customer-btn" %>
 
 <table class="customers--table">
   <% @customer.customer_attributes.each do |k,v| %>
@@ -8,6 +10,3 @@
     </tr>
   <% end %>
 </table>
-
-
-<%= link_to "Edit Customer", edit_customer_path %>

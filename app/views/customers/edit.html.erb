@@ -1,4 +1,7 @@
-<h1>Edit Customer Information</h1>
+<div class="clearfix">
+  <h1 class="float-left">Edit Customer Information</h1>
+  <%= link_to 'Go Back To Customer Page', customer_path(@customer), class: "float-right btn btn-lg btn-info add-customer-btn" %>
+</div>
 
 <%= simple_form_for :customer, url: customer_path(@customer), method: :patch do |c| %>
   <%= c.input :first_name, error: "Username is required" %>
@@ -11,8 +14,5 @@
   <%= c.input :event_location %>
   <%= c.input :note %>
   <%= c.input :web_page_viewable, as: :boolean %>
-  <%= c.button :submit, "Save Changes To Customer Profile" %>
+  <%= c.button :submit, "Save Changes To Customer Profile", class: "width-100 btn btn-primary" %>
 <% end %>
-
-
-<%= link_to 'Go back to customer page', customer_path(@customer) %>

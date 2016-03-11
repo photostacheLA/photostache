@@ -18,9 +18,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">
-            Photostache!
-          </a>
+            <%= link_to "Photostache", root_path, class: "navbar-brand" %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,8 +53,6 @@
     </nav>
 
   <div class="container">
-    <%= yield %>
-
     <% if flash[:notice] %>
       <div class="alert alert-success alert-dismissible" role="alert"><%= notice %></div>
     <% end %>
@@ -64,6 +60,7 @@
     <% if flash[:alert] %>
       <div class="alert alert-danger alert-dismissible" role="alert"><%= alert %></div>
     <% end %>
+    <%= yield %>
   </div>
 
 

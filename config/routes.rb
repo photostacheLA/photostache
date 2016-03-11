@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :customers
 
   get '/gallery_addresses', to: 'application#gallery_web_address'
+
+  root to: "customers#index"
 end
